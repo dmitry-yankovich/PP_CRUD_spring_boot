@@ -8,7 +8,15 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserDao extends CrudRepository<User, Long> {
-//public interface UserDao extends JpaRepository<User, Long> {
+public interface UserDao {
 
+    User findById (Long id);
+    List<User> index();
+    List<User> userList(int number);
+
+    void save(User user);
+
+    void delete(Long id);
+
+    void update(Long id, User user);
 }
